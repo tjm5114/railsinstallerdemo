@@ -47,27 +47,71 @@
                     </ul>
                 </div>
          
-         
-                  <ul data-role="listview" data-divider-theme="b" data-inset="true" id = "overall">
-                    <li data-role="list-divider" role="heading">
-                        Overall
-                    </li>
-                    <li data-theme="c">
-                        <a href="#overall" data-transition="slide">
-                            Substance  : 44 / 50
-                        </a>
-                    </li>
-                    <li data-theme="c">
-                        <a href="#overall" data-transition="slide">
-                            Style : 46 / 50
-                        </a>
-                    </li>
-                    <li data-theme="c">
-                        <a href="#overall" data-transition="slide">
-                            Extra Credit : 3 / 5
-                        </a>
-                    </li>
-                </ul>
+        <div data-role="collapsible-set" data-theme="b" data-content-theme="c">
+                    <div data-role="collapsible" data-collapsed="true">
+                        <h3>
+                            Substance
+                        </h3>
+                        <div data-role="fieldcontain">
+                            <fieldset data-role="controlgroup">
+                                <label for="textarea1">
+                                    Overall Comments
+                                </label>
+                                <textarea id="textarea1" placeholder="">
+                                    Roy G Big
+                                </textarea>
+                            </fieldset>
+                        </div>
+                        <div data-role="fieldcontain">
+                            <fieldset data-role="controlgroup" data-type="horizontal">
+                                <legend>
+                                </legend>
+                                <input name="radiobuttons1" id="radio1" value="highOverall" type="radio" />
+                                <label for="radio1">
+                                    High
+                                </label>
+                                <input name="radiobuttons1" id="radio2" value="midOverall" type="radio" />
+                                <label for="radio2">
+                                    Middle
+                                </label>
+                                <input name="radiobuttons1" id="radio3" value="lowOverall" type="radio" />
+                                <label for="radio3">
+                                    Low
+                                </label>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div data-role="collapsible" data-collapsed="true">
+                        <h3>
+                            Style
+                        </h3>
+                        <div data-role="fieldcontain">
+                            <fieldset data-role="controlgroup">
+                                <label for="textarea2">
+                                    Overall Comments
+                                </label>
+                                <textarea id="textarea2" placeholder="">
+                                    Roy G Big
+                                </textarea>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div data-role="collapsible" data-collapsed="true">
+                        <h3>
+                            Extra Credit
+                        </h3>
+                        <div data-role="fieldcontain">
+                            <fieldset data-role="controlgroup">
+                                <label for="textarea3">
+                                    Overall Comments
+                                </label>
+                                <textarea id="textarea3" placeholder="">
+                                    Roy G Biv
+                                </textarea>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
            </div> 
        	</div>
       
