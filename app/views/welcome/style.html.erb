@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>
+        </title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile.pagination.css">
+        <style>
+            /* App custom styles */
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js">
+        </script>
+        <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js">
+        </script>
+        <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile.pagination.js">
+        </script>
+    </head>
+    <body>
+        <div data-role="page" id="substance">
+        <ul data-role="pagination">
+	<li class="ui-pagination-prev"><a href="substance.html.erb">Overall</a></li>
+	<li class="ui-pagination-next"><a href="extraCredit.html.erb">Style</a></li>
+	</ul>
+
+<div data-role="page" id="style">
+            <div data-theme="b" data-role="header">
+                <h3>
+                    E-Rubric Tool
+                </h3>
+            </div>
+            <div data-role="content">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#overall" data-role="button" >
+                                Overall
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#substance"  data-role="button">
+                                Substance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#style" data-role="button">
+                                Style
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#extraCredit" data-role="button">
+                                Extra Credit
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+         
+                  
+                   <ul data-role="listview" data-divider-theme="b" data-inset="true" id = "style">
+                    <li data-role="list-divider" role="heading">
+                        Style
+                    </li>
+                    <li data-theme="c">
+                        <a href="#style" data-transition="slide">
+                            Criterion 1 : 4 / 5
+                        </a>
+                    </li>
+                    <li data-theme="c">
+                        <a href="#style" data-transition="slide">
+                            Criterion 2 : 17 / 20
+                        </a>
+                    </li>
+                    <li data-theme="c">
+                        <a href="#style" data-transition="slide">
+                            Criterion 3 : 25 / 25
+                        </a>
+                    </li>
+                </ul>
+             </div> 
+       	</div>
+    <script>
+            //App custom javascript
+        </script>
+     </body>
+</html>
