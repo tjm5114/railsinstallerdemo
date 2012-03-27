@@ -20,8 +20,7 @@
     <body>
         <div data-role="page" id="overall">
         <ul data-role="pagination">
-	<li class="ui-pagination-prev"><a href="extraCredit">Extra Credit</a></li>
-	<li class="ui-pagination-next"><a href="substance">Substance</a></li>
+	
 	</ul>
             <div data-theme="b" data-role="header">
                 <h3>
@@ -178,11 +177,18 @@
        	</div>
        
         
-
-            
+        
        
         <script>
-            //App custom javascript
+            $('div.ui-page').live("swipeleft", function(){
+			$.mobile.chagePage('substance.html.erb', 'slide', true);
+			});
+			
+			$('div.ui-page').live("swiperight", function(){
+			$.mobile.changePage('style.html.erb', 'slide', true);
+			});
+
+    
         </script>
      </body>
 </html>
