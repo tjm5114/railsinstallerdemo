@@ -231,7 +231,7 @@
         
        
         <script>
-           (function() {
+          /* (function() {
            	
            	//initailzes touch and scroll
            		var support Touch = $.support.touch,
@@ -312,19 +312,19 @@
 	         	});
 		})();
     
-    	$("body").live('swipeup',function() {
+    	$("page").live('swipeup',function() {
 		alert("swiped up");
 		});
 		
-		$("body").live('swipedown',function() {
+		$("page").live('swipedown',function() {
 		alert("swiped down");
 		});
-		
-		$("body").live('swiperight',function() {
+		*/
+		$('div.ui-page').live('swiperight',function() {
 		alert("swiped right");
 		});
 		
-		$("body").live('swipeleft',function() {
+		$("page").live('swipeleft',function() {
 		alert("swiped left");
 		});
     
