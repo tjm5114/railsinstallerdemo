@@ -21,14 +21,14 @@
         <script type = "text/javascript" src = "var.js"></script> 
         
         <script>
-        var critIs = "1";
-		var critOf = "3";
-    	var accompIs = "1";
-    	var accompOf = "4";
-    	var pointsIs = "1";
-    	var pointsOf = "10";
-    	var desIs = "1";
-    	var desOf = "4";
+        var $critIs = "1";
+		var $critOf = "3";
+    	var $accompIs = "1";
+    	var $accompOf = "4";
+    	var $pointsIs = "1";
+    	var $pointsOf = "10";
+    	var $desIs = "1";
+    	var $desOf = "4";
     	
     	
     	
@@ -68,7 +68,8 @@
          <div data-role="page" id="page2">
             <div data-theme="b" data-role="header">
                 <h3>
-                    Criterion 
+                    Criterion <script = "text/javascript"> document.write($critIs + ' of ' + $critOf)</script>
+                    
                     
                 </h3>
             </div>
@@ -77,27 +78,22 @@
                     <b>
                         Level of Accomplishment:
                         <br />
-                       <script = "text/javascript">
-                       $accompIs = "2";
-                       document.write($accompIs);
-                       	
-                       </script>                   
-                        
-							
-				
+                       <script = "text/javascript"> document.write($accompIs + ' of ' + $accompOf)</script>    
                         <br />
                         <br />
                         
                         <br />
                         <br />
                         Points:
-                        	<script = "text/javascript">document.write($pointsIs);</script> of <script>document.write($pointsOf);</script>
+                        	<script = "text/javascript">
+                        	document.write($pointsIs + ' of '+ $pointsOf);</script>
                         <br />
                         <br />
                         <br />
                         Description:
                         
-                        	You successfully did <script>document.write($desIs);</script> of <script>document.write($desOf);</script> tasks 
+                        	You successfully did <script = "text/javascript">
+                        	document.write($desIs + ' of '+ $desOf);</script> tasks 
                         <br />
                         <br />                        
                         <br />
