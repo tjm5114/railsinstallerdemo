@@ -1,4 +1,8 @@
+
+
 <!DOCTYPE html>
+
+
 <html>
     <head>
         <meta charset="utf-8" />
@@ -6,7 +10,7 @@
         <title>
         </title>
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile.pagination.css">
+        
         <style>
             /* App custom styles */
         </style>
@@ -14,20 +18,15 @@
         </script>
         <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js">
         </script>
+        <script type = "text/javascript" src = "var.js"></script>
         
     </head>
     <body>
     	
-    <script>
-    	var accompIs = '1'
-    	var accompOf = '4'
-    	var pointsIs = '1'
-    	var pointsOf = '10'
-    	var desIs = '1'
-    	var desOf = '4'
-    	
-    </script>
+     
         <div data-role="page" id="page1">
+        
+       
             <div data-theme="b" data-role="header">
                 <h2>
                     Assignment #4
@@ -51,30 +50,36 @@
                 </a>
             </div>
         </div>
-         <div data-role="page" id="acontent">
+         <div data-role="page" id="page2">
             <div data-theme="b" data-role="header">
                 <h3>
-                    Criterion <var>critIs</var> of <var>critOf</var>
+                    Criterion <script>document.write($critIs);</script> of <script>document.write($critOf);</script>
+                    
                 </h3>
             </div>
             <div data-role="content">
                 <div>
                     <b>
                         Level of Accomplishment:
-                        	<var>accomIs</var> of <var>accomOf</var>
+                        <br />
+                        <script>	
+                        document.write($accompIs);                       
+                        </script>
+							
+				
                         <br />
                         <br />
                         
                         <br />
                         <br />
                         Points:
-                        	<var>pointsIs</var> of <var>pointsOf</var>
+                        	<script>document.write($pointsIs);</script> of <script>document.write($pointsOf);</script>
                         <br />
                         <br />
                         <br />
                         Description:
                         
-                        	You successfully did <var>desIs</var> of <var>desOf</var> tasks 
+                        	You successfully did <script>document.write($desIs);</script> of <script>document.write($desOf);</script> tasks 
                         <br />
                         <br />                        
                         <br />
@@ -183,21 +188,21 @@
 		});
 		*/
 		$('div.ui-page').live('swiperight',function() {
-		if(accompIs > 0){
-			accompIs = accompIs - 1;
-			pointsIs = pointsIs - 1;
-			desIs = desIs - 1;
-			$.mobile.changePage('page1', 'slide', true)
-		}
+		//if(accompIs > 0){
+			$accompIs = $accompIs - 1;
+			$pointsIs = $pointsIs - 1;
+			$desIs = $desIs - 1;
+			$.mobile.changePage('#page2', 'slide', true);
+	//	}
 		});
 		
 		$('div.ui-page').live('swipeleft',function() {
-		if (accompIs <= accompOf){
-			accompIs = accompIs + 1;
-			pointsIs = pointsIs + 1;
-			desIs = desIs + 1;
-			$.mobile.changePage('page1', 'slide', false)
-		}
+		//if (accompIs <= accompOf){
+			$accompIs = $accompIs + 1;
+			$pointsIs = $pointsIs + 1;
+			$desIs = $desIs + 1;
+			$.mobile.changePage('#page2', 'slide');
+		//}
 		});
     
         </script>
