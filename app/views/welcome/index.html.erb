@@ -18,8 +18,23 @@
         </script>
         <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js">
         </script>
-        <script type = "text/javascript" src = "var.js"></script>
+        <script type = "text/javascript" src = "var.js"></script> 
         
+        <script>
+        var critIs = "1";
+		var critOf = "3";
+    	var accompIs = "1";
+    	var accompOf = "4";
+    	var pointsIs = "1";
+    	var pointsOf = "10";
+    	var desIs = "1";
+    	var desOf = "4";
+    	
+    	
+    	
+ 
+    	
+        </script>
     </head>
     <body>
     	
@@ -53,7 +68,7 @@
          <div data-role="page" id="page2">
             <div data-theme="b" data-role="header">
                 <h3>
-                    Criterion <?php echo $critIs; ?> of <?php echo $critOf; ?>
+                    Criterion 
                     
                 </h3>
             </div>
@@ -62,8 +77,11 @@
                     <b>
                         Level of Accomplishment:
                         <br />
-                        <?php	
-                         echo $accompIs; ?>                    
+                       <script = "text/javascript">
+                       $accompIs = "2";
+                       document.write($accompIs);
+                       	
+                       </script>                   
                         
 							
 				
@@ -73,7 +91,7 @@
                         <br />
                         <br />
                         Points:
-                        	<script>document.write($pointsIs);</script> of <script>document.write($pointsOf);</script>
+                        	<script = "text/javascript">document.write($pointsIs);</script> of <script>document.write($pointsOf);</script>
                         <br />
                         <br />
                         <br />
@@ -201,7 +219,7 @@
 			$accompIs = $accompIs + 1;
 			$pointsIs = $pointsIs + 1;
 			$desIs = $desIs + 1;
-			$.mobile.changePage('#page2', 'slide');
+			$.mobile.changePage('#page2', 'slide', true);
 		//}
 		});
     
