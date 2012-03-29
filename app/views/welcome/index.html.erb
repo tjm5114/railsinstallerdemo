@@ -19,6 +19,8 @@
         <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js">
         </script>
         <script type = "text/javascript" src = "var.js"></script> 
+        <script src="jqswipe.js" type="text/javascript"></script>
+
         
         <script>
         var $critIs = "1";
@@ -112,110 +114,109 @@
         
        
         <script>
-          /* (function() {
-           	
-           	//initailzes touch and scroll
-           		var support Touch = $.support.touch,
-           			scrollEvent = "touchmove scroll",
-           			touchStartEvent = supportTouch ? "touchstart" : "mousedown",
-           			touchStopEvent = supportTouch ? "touchend" : "mouseup",
-           			touchMoveEvent = supportTouch ? "touchmove" : "mousemove";
-           			
-           	//handles swipe event
-           	
-           	$.event.special.swipeupdown = {
-           		setup: function () {
-           			var thisObject = this;
-           			var $this = $(thisObject);
-           			
-           			$this.bind(touchStartEvent, function(event) {
-           				
-           				var data = event.originalEvent.touches ?
-	           				event.originalEvent.touches[ 0 ] :
-	           				event,
-	           				start = {
-	           						time: (new Data).getTime(),
-	           						coords: [ data.pageX, data.pageY],
-	           						origin: $(event.target)
-	           				},
-	           				stop;
-           				
-           				function moveHandler(event) {
-           					if (!start) {
-           						return;
-           					}
-           					
-           					var data = event.originalEvent.touches ?
-           						event.originalEvent.touches[ 0 ] :
-           						event;
-           					stop = {
-           						time: (new Date),getTime(),
-           						coords: [data.pageX, data.pageY ]
-           					};
-           					
-           					//scrolling prevent
-           					
-           					if (Math.abs(start.coords[1] - stop.coords [1]) > 10) {
-           						event.preventDefault();
-           					}
-           				}
-           				
-           				$this
-	           						.bind(touchMoveEvent, moveHandler)
-	           						.one(touchStopEvent, function(event) {
-	           					$this.unbind(touchMoveEvent, moveHandler);
-	           					if (start && stop) {
-	           						if (stop.time - start.time < 1000 &&
-	           							Math.abs(start.coords[1] - stop.coords[1]) > 30 &&
-	           							Math.abs(start.coords [0] - stop.coords[0] < 75) 
-	           							start.origin
-	           									.trigger("swipedown")
-	           									.trigger(start.coords[1] > stop.coords[1] ? "swipeup" : "swipedown");
-	           							
-	           						}
-	           					}
-	           					start = stop = undefined;
-	           			});
-	           		});
-	           	}
-	         };
-	         
-	         //add to JQuery special event lib
-	         	$.each({
-	         		swipedown : "swipeupdown",
-	         		swipeup : "swipeupdown"
-	         	}, function(event, sourceEvent) {
-	         		$.event.special[event] = {
-	         			setup: function() {
-	         				$(this).bind(sourceEvent, $.noop);
-	         			}
-	         		};
-	         	});
-		})();
+          (function() {
+// initializes touch and scroll events
+        var supportTouch = $.support.touch,
+                scrollEvent = "touchmove scroll",
+                touchStartEvent = supportTouch ? "touchstart" : "mousedown",
+                touchStopEvent = supportTouch ? "touchend" : "mouseup",
+                touchMoveEvent = supportTouch ? "touchmove" : "mousemove";
+
+ // handles swipeup and swipedown
+        $.event.special.swipeupdown = {
+            setup: function() {
+                var thisObject = this;
+                var $this = $(thisObject);
+
+                $this.bind(touchStartEvent, function(event) {
+                    var data = event.originalEvent.touches ?
+                            event.originalEvent.touches[ 0 ] :
+                            event,
+                            start = {
+                                time: (new Date).getTime(),
+                                coords: [ data.pageX, data.pageY ],
+                                origin: $(event.target)
+                            },
+                            stop;
+
+                    function moveHandler(event) {
+                        if (!start) {
+                            return;
+                        }
+
+                        var data = event.originalEvent.touches ?
+                                event.originalEvent.touches[ 0 ] :
+                                event;
+                        stop = {
+                            time: (new Date).getTime(),
+                            coords: [ data.pageX, data.pageY ]
+                        };
+
+                        // prevent scrolling
+                        if (Math.abs(start.coords[1] - stop.coords[1]) > 10) {
+                            event.preventDefault();
+                        }
+                    }
+
+                    $this
+                            .bind(touchMoveEvent, moveHandler)
+                            .one(touchStopEvent, function(event) {
+                        $this.unbind(touchMoveEvent, moveHandler);
+                        if (start && stop) {
+                            if (stop.time - start.time < 1000 &&
+                                    Math.abs(start.coords[1] - stop.coords[1]) > 30 &&
+                                    Math.abs(start.coords[0] - stop.coords[0]) < 75) {
+                                start.origin
+                                        .trigger("swipeupdown")
+                                        .trigger(start.coords[1] > stop.coords[1] ? "swipeup" : "swipedown");
+                            }
+                        }
+                        start = stop = undefined;
+                    });
+                });
+            }
+        };
+
+//Adds the events to the jQuery events special collection
+        $.each({
+            swipedown: "swipeupdown",
+            swipeup: "swipeupdown"
+        }, function(event, sourceEvent){
+            $.event.special[event] = {
+                setup: function(){
+                    $(this).bind(sourceEvent, $.noop);
+                }
+            };
+        });
+
+    })();
     
-    	$("page").live('swipeup',function() {
+    	$('div.ui-page').live('swipeup',function() {
 		alert("swiped up");
 		});
 		
-		$("page").live('swipedown',function() {
+		$('div.ui-page').live('swipedown',function() {
 		alert("swiped down");
 		});
-		*/
-		$('div.ui-page').live('swiperight',function() {
+		
+		$('div.ui-page').live('swiperight', function() {
 		//if(accompIs > 0){
 			$accompIs = 3;
 			$pointsIs = 2;
 			$desIs = 4;
-			//$.mobile.changePage('#page2', 'slide', true);
+			//$('div.ui-page').trigger('pagecreate');
+			//$('div.ui-page').listview('refresh');
 	//	}
 		});
 		
-		$('div.ui-page').live('swipeleft',function() {
+		$('div.ui-page').live('swipeleft', function() {
 		//if (accompIs <= accompOf){
 			$accompIs = 2;
 			$pointsIs = 7;
 			$desIs = 6;
-			//$.mobile.changePage('#page2', 'slide', true);
+			$('div.ui-page').trigger('pagecreate');
+			$('div.ui-page').listview('refresh');
+			
 		//}
 		});
     
