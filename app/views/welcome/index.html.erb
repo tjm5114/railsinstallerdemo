@@ -14,277 +14,83 @@
         </script>
         <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js">
         </script>
-        <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile.pagination.js">
-        </script>
+        
     </head>
     <body>
-        <div data-role="page" id="overall">
-        
+    	
+    <script>
+    	var accompIs = '1'
+    	var accompOf = '4'
+    	var pointsIs = '1'
+    	var pointsOf = '10'
+    	var desIs = '1'
+    	var desOf = '4'
+    	
+    </script>
+        <div data-role="page" id="page1">
+            <div data-theme="b" data-role="header">
+                <h2>
+                    Assignment #4
+                </h2>
+            </div>
+            <div data-role="content">
+                <a data-role="button" data-transition="fade" href="#whole">
+                    Assignment as a whole
+                </a>
+                <a data-role="button" data-transition="fade" href="#acontent">
+                    Part 1: Artwork Content
+                </a>
+                <a data-role="button" data-transition="fade" href="#aexecution">
+                    Part 2: Artwork Execution
+                </a>
+                <a data-role="button" data-transition="fade" href="#wcontent">
+                    Part 3: Writing Content
+                </a>
+                <a data-role="button" data-transition="fade" href="#wquality">
+                    Part 4: Writing Quality
+                </a>
+            </div>
+        </div>
+         <div data-role="page" id="acontent">
             <div data-theme="b" data-role="header">
                 <h3>
-                    E-Rubric Tool
+                    Criterion <var>critIs</var> of <var>critOf</var>
                 </h3>
             </div>
             <div data-role="content">
-                <div data-role="navbar" data-iconpos="top">
-                    <ul>
-                        <li>
-                            <a href="#overall" data-role="button" >
-                                Overall
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#substance"  data-role="button">
-                                Substance
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#style" data-role="button">
-                                Style
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#extraCredit" data-role="button">
-                                Extra Credit
-                            </a>
-                        </li>
-                    </ul>
+                <div>
+                    <b>
+                        Level of Accomplishment:
+                        	<var>accomIs</var> of <var>accomOf</var>
+                        <br />
+                        <br />
+                        
+                        <br />
+                        <br />
+                        Points:
+                        	<var>pointsIs</var> of <var>pointsOf</var>
+                        <br />
+                        <br />
+                        <br />
+                        Description:
+                        
+                        	You successfully did <var>desIs</var> of <var>desOf</var> tasks 
+                        <br />
+                        <br />                        
+                        <br />
+                        <br />
+                        Would Benefit from:                 
+                        	
+                        <br />
+                        <br />
+                        <br />
+                        Additional Comments:
+                    </b>
                 </div>
-         
-        <div data-role="collapsible-set" data-theme="b" data-content-theme="c">
-                    <div data-role="collapsible" data-collapsed="true">
-                        <h3>
-                            Substance
-                        </h3>
-                        <div data-role="fieldcontain">
-                            <fieldset data-role="controlgroup">
-                                <label for="textarea1">
-                                    Overall Comments
-                                </label>
-                                <textarea id="textarea1" placeholder="">
-                                    Roy G Big
-                                </textarea>
-                            </fieldset>
-                        </div>
-                        <div data-role="fieldcontain">
-                            <fieldset data-role="controlgroup" data-type="horizontal">
-                                <legend>
-                                </legend>
-                                <input name="radiobuttons1" id="radio1" value="highOverall" type="radio" />
-                                <label for="radio1">
-                                    High
-                                </label>
-                                <input name="radiobuttons1" id="radio2" value="midOverall" type="radio" />
-                                <label for="radio2">
-                                    Middle
-                                </label>
-                                <input name="radiobuttons1" id="radio3" value="lowOverall" type="radio" />
-                                <label for="radio3">
-                                    Low
-                                </label>
-                            </fieldset>
-                        </div>
-                    </div>
-                    <div data-role="collapsible" data-collapsed="true">
-                        <h3>
-                            Style
-                        </h3>
-                        <div data-role="fieldcontain">
-                            <fieldset data-role="controlgroup">
-                                <label for="textarea2">
-                                    Overall Comments
-                                </label>
-                                <textarea id="textarea2" placeholder="">
-                                    Roy G Big
-                                </textarea>
-                            </fieldset>
-                        </div>
-                    </div>
-                    <div data-role="collapsible" data-collapsed="true">
-                        <h3>
-                            Extra Credit
-                        </h3>
-                        <div data-role="fieldcontain">
-                            <fieldset data-role="controlgroup">
-                                <label for="textarea3">
-                                    Overall Comments
-                                </label>
-                                <textarea id="textarea3" placeholder="">
-                                    Roy G Biv
-                                </textarea>
-                            </fieldset>
-                        </div>
-                    </div>
-                </div>
-           </div> 
-       	</div>
+            </div>
+        </div>
       
-        <div data-role="page" id="substance">
-            <div data-theme="b" data-role="header">
-                <h3>
-                    E-Rubric Tool
-                </h3>
-            </div>
-            <div data-role="content">
-                <div data-role="navbar" data-iconpos="top">
-                    <ul>
-                        <li>
-                            <a href="#overall" data-role="button" >
-                                Overall
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#substance"  data-role="button">
-                                Substance
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#style" data-role="button">
-                                Style
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#extraCredit" data-role="button">
-                                Extra Credit
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                           
-                <ul data-role="listview" data-divider-theme="b" data-inset="true" id = "substance">
-                    <li data-role="list-divider" role="heading">
-                        Substance
-                    </li>
-                    <li data-theme="c">
-                        <a href="#substance" data-transition="slide">
-                            Criterion 1 : 3 / 5
-                        </a>
-                    </li>
-                    <li data-theme="c">
-                        <a href="#substance" data-transition="slide">
-                            Criterion 2 : 19 / 20
-                        </a>
-                    </li>
-                    <li data-theme="c">
-                        <a href="#substance" data-transition="slide">
-                            Criterion 3 : 22 / 25
-                        </a>
-                    </li>
-                </ul>
-              </div> 
-       	</div>
-       
-        <div data-role="page" id="substance">
-            <div data-theme="b" data-role="header">
-                <h3>
-                    E-Rubric Tool
-                </h3>
-            </div>
-            <div data-role="content">
-                <div data-role="navbar" data-iconpos="top">
-                    <ul>
-                        <li>
-                            <a href="#overall" data-role="button" >
-                                Overall
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#substance"  data-role="button">
-                                Substance
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#style" data-role="button">
-                                Style
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#extraCredit" data-role="button">
-                                Extra Credit
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                           
-                <ul data-role="listview" data-divider-theme="b" data-inset="true" id = "substance">
-                    <li data-role="list-divider" role="heading">
-                        Substance
-                    </li>
-                    <li data-theme="c">
-                        <a href="#substance" data-transition="slide">
-                            Criterion 1 : 3 / 5
-                        </a>
-                    </li>
-                    <li data-theme="c">
-                        <a href="#substance" data-transition="slide">
-                            Criterion 2 : 19 / 20
-                        </a>
-                    </li>
-                    <li data-theme="c">
-                        <a href="#substance" data-transition="slide">
-                            Criterion 3 : 22 / 25
-                        </a>
-                    </li>
-                </ul>
-              </div> 
-       	</div>
         
-        
-		<div data-role="page" id="style">
-            <div data-theme="b" data-role="header">
-                <h3>
-                    E-Rubric Tool
-                </h3>
-            </div>
-            <div data-role="content">
-                <div data-role="navbar" data-iconpos="top">
-                    <ul>
-                        <li>
-                            <a href="#overall" data-role="button" >
-                                Overall
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#substance"  data-role="button">
-                                Substance
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#style" data-role="button">
-                                Style
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#extraCredit" data-role="button">
-                                Extra Credit
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-         
-                  
-                   <ul data-role="listview" data-divider-theme="b" data-inset="true" id = "style">
-                    <li data-role="list-divider" role="heading">
-                        Style
-                    </li>
-                    <li data-theme="c">
-                        <a href="#style" data-transition="slide">
-                            Criterion 1 : 4 / 5
-                        </a>
-                    </li>
-                    <li data-theme="c">
-                        <a href="#style" data-transition="slide">
-                            Criterion 2 : 17 / 20
-                        </a>
-                    </li>
-                    <li data-theme="c">
-                        <a href="#style" data-transition="slide">
-                            Criterion 3 : 25 / 25
-                        </a>
-                    </li>
-                </ul>
-             </div> 
-       	</div>
        
         <script>
           /* (function() {
@@ -377,11 +183,21 @@
 		});
 		*/
 		$('div.ui-page').live('swiperight',function() {
-		$.mobile.changePage('#substance', 'slide');
+		if(accompIs > 0){
+			accompIs = accompIs - 1;
+			pointsIs = pointsIs - 1;
+			desIs = desIs - 1;
+			$.mobile.changePage('page1', 'slide', true)
+		}
 		});
 		
 		$('div.ui-page').live('swipeleft',function() {
-		$.mobile.changePage('#style', 'slide');
+		if (accompIs <= accompOf){
+			accompIs = accompIs + 1;
+			pointsIs = pointsIs + 1;
+			desIs = desIs + 1;
+			$.mobile.changePage('page1', 'slide', false)
+		}
 		});
     
         </script>
