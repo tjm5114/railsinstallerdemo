@@ -1,4 +1,22 @@
+<?php
+	
+	$studentsID = $_SESSION['studentsID'];
+	$studentName = get_student($studentsID);
+	$coursesID = intval(mysql_real_escape_string($_GET['coursesID']));
+	$assignmentsID = intval(mysql_real_escape_string($_GET['assignmentsID']));
 
+	$rubricsID = get_rubricsID($assignmentsID);
+	$result = mysql_query("SELECT * FROM user_rubrics WHERE ID=$rubricsID LIMIT 1");
+  $row = mysql_fetch_array($result);
+	$title = $row['title'];
+	$rubricHTML = $row['rubric'];
+	$total = $row['total'];
+
+	$coursesemestersectionID = get_coursesemestersectionID($coursesID);
+	$assignment = get_assignment($assignmentsID);
+
+	update_accessed($studentsID,$assignmentsID);
+?>
 
 <!DOCTYPE html>
 
@@ -49,9 +67,11 @@
                     Assignment #4
                 </h2>
             </div>
+           
             <div data-role="content">
                 <a data-role="button" data-transition="fade" href="#page2">
                     Overview
+                    <?php echo $assignment ?>
                 </a>
                 <a data-role="button" data-transition="fade" href="#page2">
                     Part 1: Artwork Content
