@@ -188,29 +188,33 @@
     
     	$('div.ui-page').live('swipeup',function() {
 		
-			cirtIndex += 1;
-			$.changePage(page2,'slide');
+			critIndex += 1;
+			//$.changePage(page2,'slide');
+			alert('critIndex is now ' + critIndex);
 		
 		});
 		
 		$('div.ui-page').live('swipedown',function() {
 		
 			critIndex -= 1;
-			$.changePage(page2, 'slide');
+			//$.changePage(page2, 'slide');
+			alert('critIndex is now ' + critIndex);
 		
 		});
 		
 		$('div.ui-page').live('swiperight', function() {
 		
 			pointsIndex -=1;
-			$.changePage(page2, 'slide');	
+			//$.changePage(page2, 'slide');	
+			alert('pointsIndex is now ' + pointsIndex);
 	
 		});
 		
 		$('div.ui-page').live('swipeleft', function() {
 		
 			pointsIndex += 1;
-			$.changePage(page2, 'slide');
+			//$.changePage(page2, 'slide');
+			alert('pointsIndex is now ' + pointsIndex);
 		});
     
         </script>
