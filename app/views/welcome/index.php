@@ -1,8 +1,7 @@
 <?php
-	require_once('../../../lib/dbconnector.php');
-	require_once('../php/functions.php');
-	include('../php/session.php');
-
+	require_once('dbconnector.php');
+	require_once('functions.php');
+	
 	$studentsID = $_SESSION['studentsID'];
 	$studentName = get_student($studentsID);
 	$coursesID = intval(mysql_real_escape_string($_GET['coursesID']));
